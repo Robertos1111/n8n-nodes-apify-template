@@ -5,29 +5,29 @@ import {
 	INodeTypeDescription,
 	NodeConnectionType,
 } from 'n8n-workflow';
-import { properties } from './ApifyActorTemplate.properties';
+import { properties } from './ApifyFacebookCommentsScraper.properties';
 import { runActor } from './helpers/executeActor';
 
 // SNIPPET 1: Make sure the constants are correct
-export const ACTOR_ID = '$$ACTOR_ID' as string;
+export const ACTOR_ID = 'us5srxAYnsrkgUv2v' as string;
 
-export const PACKAGE_NAME = '$$PACKAGE_NAME' as string;
-export const CLASS_NAME = '$$CLASS_NAME' as string;
+export const PACKAGE_NAME = 'n8n-nodes-facebook-comments-scraper' as string;
+export const CLASS_NAME = 'ApifyFacebookCommentsScraper' as string;
 export const ClassNameCamel = CLASS_NAME.charAt(0).toLowerCase() + CLASS_NAME.slice(1); // make the first letter lowercase for name fields
 
-export const X_PLATFORM_HEADER_ID = '$$X_PLATFORM_HEADER_ID' as string;
-export const X_PLATFORM_APP_HEADER_ID = '$$X_PLATFORM_APP_HEADER_ID' as string;
+export const X_PLATFORM_HEADER_ID = 'n8n' as string;
+export const X_PLATFORM_APP_HEADER_ID = 'facebook-comments-scraper-app' as string;
 
-export const DISPLAY_NAME = '$$DISPLAY_NAME' as string;
-export const DESCRIPTION = '$$DESCRIPTION' as string;
+export const DISPLAY_NAME = 'Apify Facebook Comments Scraper' as string;
+export const DESCRIPTION = 'Extract data from hundreds of Facebook comments from one or multiple Facebook posts. Get comment text, timestamp, likes count and basic commenter info. Download the data in JSON, CSV, Excel and use it in apps, spreadsheets, and reports.' as string;
 
-export class ApifyActorTemplate implements INodeType {
+export class ApifyFacebookCommentsScraper implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: DISPLAY_NAME,
 		name: ClassNameCamel,
 
 		// SNIPPET 2: Adjust the icon of your app
-		icon: 'file:logo.svg',
+		icon: 'file:logo.png',
 		group: ['transform'],
 		// Mismatched version and defaultVersion as a minor hack to hide "Custom API Call" resource
 		version: [1],
